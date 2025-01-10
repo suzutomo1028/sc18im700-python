@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(levelname)s : %(module)s : %(
 
 S_CHAR = b'S'
 P_CHAR = b'P'
-R_CHAR = b'R' 
+R_CHAR = b'R'
 W_CHAR = b'W'
 I_CHAR = b'I'
 O_CHAR = b'O'
@@ -127,7 +127,7 @@ class SC18IM700:
         self.write(tx_data)
         logging.debug('%s', self.bytes_to_str(tx_data))
 
-    def read_reg(self, reg_addr: bytes) -> None:
+    def read_reg(self, reg_addr: bytes) -> bytes:
         """ 内部レジスタから値を読み込む
         """
         size = len(reg_addr)
